@@ -7,7 +7,8 @@
       "subject": "Hello"
     },
     "ham_or_spam": "ham",
-    "score": 0.9
+    "nb_score": 0.9,
+    "svm_score": 0.91
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
       "subject": "Re: Hello"
     },
     "ham_or_spam": "ham",
-    "score": 0.95
+    "nb_score": 0.95,
+    "svm_score": 0.99
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
       "subject": "Important Information"
     },
     "ham_or_spam": "spam",
-    "score": 0.1
+    "nb_score": 0.1,
+    "svm_score": 0.2
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
       "subject": "Reminder"
     },
     "ham_or_spam": "ham",
-    "score": 0.8
+    "nb_score": 0.8,
+    "svm_score": 0.9
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
       "subject": "Re: Reminder"
     },
     "ham_or_spam": "ham",
-    "score": 0.92
+    "nb_score": 0.92,
+    "svm_score": 0.9
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
       "subject": "You won!"
     },
     "ham_or_spam": "spam",
-    "score": 0.05
+    "nb_score": 0.05,
+    "svm_score": 0.1
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
       "subject": "Meeting"
     },
     "ham_or_spam": "ham",
-    "score": 0.75
+    "nb_score": 0.75,
+    "svm_score": 0.75
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
       "subject": "Re: Meeting"
     },
     "ham_or_spam": "ham",
-    "score": 0.88
+    "nb_score": 0.88,
+    "svm_score": 0.9
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
       "subject": "Important Message"
     },
     "ham_or_spam": "spam",
-    "score": 0.12
+    "nb_score": 0.12,
+    "svm_score": 0.2
   },
   {
     "id": 10,
@@ -97,6 +106,51 @@
       "subject": "Update"
     },
     "ham_or_spam": "ham",
-    "score": 0.85
+    "nb_score": 0.85,
+    "svm_score": 0.97
+  },
+  {
+    "id": 11,
+    "email": {
+      "from": "john.doe@example.com",
+      "to": "jane.smith@example.com",
+      "subject": "Update"
+    },
+    "ham_or_spam": "ham",
+    "nb_score": 0.85,
+    "svm_score": 0.93
+  },
+  {
+    "id": 12,
+    "email": {
+      "from": "john.doe@example.com",
+      "to": "jane.smith@example.com",
+      "subject": "Update"
+    },
+    "ham_or_spam": "ham",
+    "nb_score": 0.85,
+    "svm_score": 0.88
+  },
+  {
+    "id": 13,
+    "email": {
+      "from": "john.doe@example.com",
+      "to": "jane.smith@example.com",
+      "subject": "Update"
+    },
+    "ham_or_spam": "ham",
+    "nb_score": 0.85,
+    "svm_score": 0.87
+  },
+  {
+    "id": 14,
+    "email": {
+      "from": "john.doe@example.com",
+      "to": "jane.smith@example.com",
+      "subject": "Update"
+    },
+    "ham_or_spam": "ham",
+    "nb_score": 0.85,
+    "svm_score": 0.9
   }
 ]

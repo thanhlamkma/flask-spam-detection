@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phát hiện thư rác</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      /* Navbar menu */
+      .navbar-menu {
+        padding: 2px !important;
+      }
+
+      .navbar-menu .nav-link {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <nav
+      class="navbar navbar-light px-3 py-1"
+      style="background-color: #f4edd3"
+    >
+      <a class="navbar-brand" href="/">
+        <div class="d-flex align-items-center">
+          <img src="/static/images/logo.webp" width="60" height="60" alt="" />
+          <span class="ml-3 font-weight-bold text-uppercase">
+            Học viện kĩ thuật mật mã</span
+          >
+        </div>
+      </a>
+    </nav>
+
+    <!-- Navbar menu -->
+    <nav
+      class="navbar-menu navbar sticky-top navbar-expand-lg navbar-dark"
+      style="background-color: #ed7e01"
+    >
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/"
+                >Trang chủ <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/apply">Ứng dụng</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Biểu đồ</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Kết quả</a>
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0">
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                Search
+              </button>
+            </form> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Body -->
+    <div>{% block body %}{% endblock %}</div>
+
+    <!-- Footer -->
+    <div>{% block footer %}{% endblock %}</div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
