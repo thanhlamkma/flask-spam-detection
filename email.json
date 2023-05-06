@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "email": {
+      "from": "john.doe@example.com",
+      "to": "jane.smith@example.com",
+      "subject": "Hello"
+    },
+    "ham_or_spam": "ham",
+    "score": 0.9
+  },
+  {
+    "id": 2,
+    "email": {
+      "from": "jane.smith@example.com",
+      "to": "john.doe@example.com",
+      "subject": "Re: Hello"
+    },
+    "ham_or_spam": "ham",
+    "score": 0.95
+  },
+  {
+    "id": 3,
+    "email": {
+      "from": "jane.smith@example.com",
+      "to": "john.doe@example.com",
+      "subject": "Important Information"
+    },
+    "ham_or_spam": "spam",
+    "score": 0.1
+  },
+  {
+    "id": 4,
+    "email": {
+      "from": "john.doe@example.com",
+      "to": "jane.smith@example.com",
+      "subject": "Reminder"
+    },
+    "ham_or_spam": "ham",
+    "score": 0.8
+  },
+  {
+    "id": 5,
+    "email": {
+      "from": "jane.smith@example.com",
+      "to": "john.doe@example.com",
+      "subject": "Re: Reminder"
+    },
+    "ham_or_spam": "ham",
+    "score": 0.92
+  },
+  {
+    "id": 6,
+    "email": {
+      "from": "jane.smith@example.com",
+      "to": "john.doe@example.com",
+      "subject": "You won!"
+    },
+    "ham_or_spam": "spam",
+    "score": 0.05
+  },
+  {
+    "id": 7,
+    "email": {
+      "from": "john.doe@example.com",
+      "to": "jane.smith@example.com",
+      "subject": "Meeting"
+    },
+    "ham_or_spam": "ham",
+    "score": 0.75
+  },
+  {
+    "id": 8,
+    "email": {
+      "from": "jane.smith@example.com",
+      "to": "john.doe@example.com",
+      "subject": "Re: Meeting"
+    },
+    "ham_or_spam": "ham",
+    "score": 0.88
+  },
+  {
+    "id": 9,
+    "email": {
+      "from": "jane.smith@example.com",
+      "to": "john.doe@example.com",
+      "subject": "Important Message"
+    },
+    "ham_or_spam": "spam",
+    "score": 0.12
+  },
+  {
+    "id": 10,
+    "email": {
+      "from": "john.doe@example.com",
+      "to": "jane.smith@example.com",
+      "subject": "Update"
+    },
+    "ham_or_spam": "ham",
+    "score": 0.85
+  }
+]
