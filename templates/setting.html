@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {%block body %}
+<!-- Body -->
+<div class="container">
+  <!-- Project name -->
+  <div class="my-4 pb-1" style="border-bottom: 1px solid gray">
+    <h5 class="font-weight-bold text-uppercase">Cài đặt</h5>
+  </div>
+
+  <h6 class="mb-3">Thuật toán sử dụng để lọc thư</h6>
+
+  <form method="post">
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">
+        Lựa chọn thuật toán
+      </label>
+      <div class="col-sm-4">
+        <select class="form-control" name="algorithm_type">
+          <option value="nb">Naive Bayes</option>
+          <option value="svm">SVM (Support Machine Vector)</option>
+        </select>
+      </div>
+      <button type="submit" class="col-sm-1 btn btn-primary">Lưu</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

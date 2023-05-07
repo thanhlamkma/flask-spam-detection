@@ -1,2 +1,4 @@
 flask
 flask-paginate
+aioredis
+redis

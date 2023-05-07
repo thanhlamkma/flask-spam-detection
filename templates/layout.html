@@ -18,6 +18,10 @@
       .navbar-menu .nav-link {
         font-size: 18px;
       }
+
+      .navbar-menu .nav-item:hover {
+        opacity: 0.8;
+      }
     </style>
   </head>
   <body>
@@ -29,9 +33,12 @@
       <a class="navbar-brand" href="/">
         <div class="d-flex align-items-center">
           <img src="/static/images/logo.webp" width="60" height="60" alt="" />
-          <span class="ml-3 font-weight-bold text-uppercase">
-            Học viện kĩ thuật mật mã</span
+          <span
+            class="ml-3 font-weight-bold text-uppercase"
+            style="font-size: 24px; color: red"
           >
+            Học viện kĩ thuật mật mã
+          </span>
         </div>
       </a>
     </nav>
@@ -39,7 +46,7 @@
     <!-- Navbar menu -->
     <nav
       class="navbar-menu navbar sticky-top navbar-expand-lg navbar-dark"
-      style="background-color: #ed7e01"
+      style="background-color: #0077b6"
     >
       <div class="container">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -53,10 +60,13 @@
               <a class="nav-link" href="/apply">Ứng dụng</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/">Biểu đồ</a>
+              <a class="nav-link" href="/setting">Cài đặt</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/">Kết quả</a>
+              <a class="nav-link" href="/chart">Biểu đồ</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/result">Kết quả</a>
             </li>
           </ul>
           <!-- <form class="form-inline my-2 my-lg-0">
