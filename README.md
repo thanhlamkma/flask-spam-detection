@@ -20,3 +20,20 @@ sudo apt install python3.8
 ```
 pip install -r requirements.txt
 ```
+
+3. Start project
+
+```
+flask --app app.py --debug run
+```
+
+## Features
+
+- Introduce project
+- Show application of algorithms in detecting spam emails
+- Show charts of the accuracy of algorithms
+- Show project result and evaluation
+
+## License
+
+_Project is made by Do Thi Hong Nhung and Vo Thanh Lam_
