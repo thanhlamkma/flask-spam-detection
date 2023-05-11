@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {%block body %}
+<div class="my-4 pb-1" style="border-bottom: 1px solid gray">
+    <h5 class="font-weight-bold text-uppercase">
+        Biểu đồ
+    </h5>
+</div>
+
+<div class="mx-auto my-3">
+    <!-- The most using machine learning techniques -->
+    <canvas id="mlMethod" style="margin: 10px auto; width:100%; max-width:700px"></canvas>
+
+    <!-- Compare precison accuracy of machine learning algorithms -->
+    <canvas id="mlAccuracyAlgorithms" style="margin: 0 auto; width:100%;max-width:700px"></canvas>
+</div>
+
+
+<script>
+    // Chart for the most using machine learning techniques
+    const data = {
+        labels: [
+            'Supervised Learning',
+            'Unsupervised Learning',
+            'Reinforcement Learning'
+        ],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [57, 29, 14],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    new Chart("mlMethod", {
+        type: "doughnut",
+        data: data,
+        options: {
+            title: {
+                display: true,
+                text: "Tỉ lệ sử dụng các phương pháp học máy trong xác định thư rác"
+            }
+        }
+    })
+
+    // Chart for accuracy of algorithms
+    var xValues = ["SVM", "Naive Bayes", "K-Nearest Neighbor", "Desicion Tree", "Random Forest", "Linear Regression"];
+    var yValues = [96.3, 90.8, 98.2, 95.8, 99, 98.9];
+    var barColors = ["red", "green", "blue", "orange", "brown", "gray"];
+
+    new Chart("mlAccuracyAlgorithms", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+            title: {
+                display: true,
+                text: "Độ chính xác các thuật toán"
+            }
+        }
+    });
+</script>
+{% endblock %}

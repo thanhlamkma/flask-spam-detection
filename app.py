@@ -1,19 +1,15 @@
 from flask import Flask, render_template, request
 from flask_paginate import Pagination, get_page_args, get_page_parameter
 import json
-import connect_db as db
+from connect_mongo import get_emaildb
 
 app = Flask(__name__, template_folder="templates", static_url_path="/static")
 
-def get_emails():
-  with open('email.json') as json_file:
-    emails = json.load(json_file)
-    
-  return emails
 
 def get_pagination_emails(offset=0, emails_per_page=10):
-  emails = db.get_emails()
+  emails = get_emaildb()
   return emails[offset: offset + emails_per_page]
+
 
 @app.route("/")
 def home():
@@ -21,7 +17,7 @@ def home():
 
 @app.route("/apply")
 def show_emails():
-  emails = db.get_emails()
+  emails = get_emaildb()
 
   # Pagination
   page, emails_per_page, offset = get_page_args(page_parameter="page", per_page_parameter="per_page")
@@ -46,11 +42,11 @@ def setting():
 
 @app.route("/chart")
 def show_chart():
-  return render_template("setting.html")
+  return render_template("chart.html")
 
 @app.route("/result")
 def show_result():
   return render_template("setting.html")
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(host="0.0.0.0",debug=True)

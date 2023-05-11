@@ -9,7 +9,25 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+
     <style>
+      @media (min-width: 1500px) {
+        .container {
+          max-width: 1500px !important;
+        }
+      }
+
       /* Navbar menu */
       .navbar-menu {
         padding: 2px !important;
@@ -22,20 +40,26 @@
       .navbar-menu .nav-item:hover {
         opacity: 0.8;
       }
+
+      .text-title {
+        font-weight: 500;
+        font-size: 16px;
+      }
     </style>
   </head>
+
   <body>
     <!-- Header -->
     <nav
-      class="navbar navbar-light px-3 py-1"
+      class="navbar navbar-light px-3 py-2"
       style="background-color: #f4edd3"
     >
       <a class="navbar-brand" href="/">
         <div class="d-flex align-items-center">
-          <img src="/static/images/logo.webp" width="60" height="60" alt="" />
+          <img src="/static/images/logo.webp" width="68" height="68" alt="" />
           <span
             class="ml-3 font-weight-bold text-uppercase"
-            style="font-size: 24px; color: red"
+            style="font-size: 28px; color: red"
           >
             Học viện kĩ thuật mật mã
           </span>
@@ -50,11 +74,14 @@
     >
       <div class="container">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav mx-auto">
             <li class="nav-item active">
               <a class="nav-link" href="/"
                 >Trang chủ <span class="sr-only">(current)</span></a
               >
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/chart">Biểu đồ</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/apply">Ứng dụng</a>
@@ -62,30 +89,13 @@
             <li class="nav-item active">
               <a class="nav-link" href="/setting">Cài đặt</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/chart">Biểu đồ</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/result">Kết quả</a>
-            </li>
           </ul>
-          <!-- <form class="form-inline my-2 my-lg-0">
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                Search
-              </button>
-            </form> -->
         </div>
       </div>
     </nav>
 
     <!-- Body -->
-    <div>{% block body %}{% endblock %}</div>
+    <div class="container">{% block body %}{% endblock %}</div>
 
     <!-- Footer -->
     <div>{% block footer %}{% endblock %}</div>
