@@ -4,20 +4,24 @@
   <h5 class="font-weight-bold text-uppercase">Cài đặt</h5>
 </div>
 
-<h6 class="mb-3">Thuật toán sử dụng để lọc thư</h6>
+<div class="card my-4">
+  <div class="card-body">
+    <h5 class="card-title">Thuật toán sử dụng để lọc thư</h5>
 
-<form method="post">
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">
-      Lựa chọn thuật toán
-    </label>
-    <div class="col-sm-4">
-      <select class="form-control" name="algorithm_type">
-        <option value="nb">Naive Bayes</option>
-        <option value="svm">SVM (Support Machine Vector)</option>
-      </select>
-    </div>
-    <button type="submit" class="col-sm-1 btn btn-primary">Submit</button>
+    <form class="mt-4" method="post">
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">
+          Lựa chọn thuật toán
+        </label>
+        <div class="col-sm-4">
+          <select class="form-control" name="algorithm_type">
+            <option value="nb">Naive Bayes</option>
+            <option value="svm">SVM (Support Machine Vector)</option>
+          </select>
+        </div>
+        <button type="submit" class="col-sm-1 btn btn-primary">Submit</button>
+      </div>
+    </form>
   </div>
-</form>
+</div>
 {% endblock %}

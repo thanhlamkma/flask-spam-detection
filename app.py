@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_paginate import Pagination, get_page_args, get_page_parameter
 import json
 from connect_mongo import get_emaildb
@@ -10,6 +10,15 @@ def get_pagination_emails(offset=0, emails_per_page=10):
   emails = get_emaildb()
   return emails[offset: offset + emails_per_page]
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Tên đăng nhập hoặc mật khẩu không chính xác.'
+        else:
+            return redirect(url_for('home'))
+    return render_template('login.html', error=error)
 
 @app.route("/")
 def home():
