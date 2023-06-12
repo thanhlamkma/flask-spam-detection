@@ -1,0 +1,264 @@
+{% extends "index.html" %} {%block body %}
+<div class="intro-page">
+  <!-- Project name -->
+  <div class="row mb-4 d-flex flex-column align-items-center" style="font-family: Arial, Helvetica, sans-serif;">
+    <div class="overview-wrap">
+      <span class="intro-project-title">Đồ án chuyên ngành ATTT 2023</h2>
+    </div>
+
+    <span class="intro-project-content" style="font-size: 24px; font-weight: 500;">
+      Nghiên cứu các thuật toán học máy trong phát hiện thư rác
+    </span>
+  </div>
+
+  <!-- Made by students -->
+  <div class="row mb-3">
+    <div class="col-6">
+      <div class="card h-100">
+        <div class="card-header">Giảng viên hướng dẫn</div>
+        <div class="card-body">
+          <p class="card-text">TS. Nguyễn Mạnh Thắng - Khoa An toàn thông tin, Học viện Kỹ thuật mật mã</p>
+          <p class="card-text">TS. Nguyễn Hữu Xuân Trường - Học viện Chính sách và Phát triển</p>
+          <p class="card-text">ThS. Nguyễn Thị Thủy - Phòng An Ninh Mạng, Tập đoàn VNPT</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="card h-100">
+        <div class="card-header">Sinh viên thực hiện</div>
+        <div class="card-body">
+          <p class="card-text">Đỗ Thị Hồng Nhung - AT150641</p>
+          <p class="card-text">Võ Thanh Lâm - AT150428</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contents -->
+  <div class="intro-page-content">
+    <div class="card mb-3">
+      <div class="card-body row">
+        <div class="col d-flex flex-column justify-content-center">
+          <h5 class="card-title">Bài toán</h5>
+          <p class="card-text">Bài toán phân loại thư rác là một trong những ứng dụng của bài toán phân lớp. Bài toán
+            phân
+            lớp
+            (classification) là bài toán lớn trong lĩnh vực Machine Learning (ML). Đây là quá trình phân lớp một đối
+            tượng
+            dữ
+            liệu vào một hay nhiều lớp đã cho trước nhờ một mô hình phân lớp (model). Mô hình này được xây dựng dựa trên
+            một
+            tập dữ liệu được xây dựng trước được gán nhãn (hay còn gọi là tập huấn luyện). Quá trình phân lớp là quá
+            trình
+            gán
+            nhãn cho đối tượng dữ liệu. Nhiệm vụ của bài toán phân lớp là tìm một mô hình phân lớp để khi có dữ liệu mới
+            thì
+            có thể xác định được dữ liệu đó thuộc vào phân lớp nào.</p>
+        </div>
+
+        <div class="col d-flex flex-column align-items-center justify-content-center">
+          <img class="card-img-bottom" src="/static/images/supervised.png" alt="Card image cap">
+          <p class="card-text" style="margin: 6px auto;"><small class="text-muted">Mô hình học máy có giám sát</small>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Hướng giải quyết</h5>
+        <p class="card-text">Việc phân loại tiến hành như sau. Trước tiên, nội dung thư được biểu diễn
+          dưới dạng các đặc trưng hay các thuộc tính, mỗi đặc trưng thường là một từ hoặc cụm từ xuất hiện trong thư.
+          Tiếp
+          theo, trong giai đoạn huấn luyện, tập thư đã được gán nhãn {rác, bình thường} - gọi là dữ liệu huấn luyện hay
+          dữ
+          liệu mẫu - được sử dụng để huấn luyện một bộ phân loại. Sau khi huấn luyện xong, bộ phân loại được sử dụng để
+          xác
+          định thư mới (thư chưa biết nhãn) thuộc vào loại nào trong hai loại nói trên. Trong cả giai đoạn huấn luyện và
+          phân loại, thuật toán phân loại chỉ làm việc với nội dung thư đã được biểu diễn dưới dạng các đặc trưng.
+          Xét bài toán phân loại thư rác dưới dạng bài toán toán phân loại văn bản, trong đó tập dữ liệu mẫu ban đầu là
+          các
+          thư rác và thư bình thường, các văn bản cần phân loại là các thư được gửi đến máy khách. Kết quả đầu ra của
+          quá
+          trình phân loại này là: Thư rác (spam) hoặc thư bình thường (ham).</p>
+
+        <div class="row my-4">
+          <div class="col">
+            <h5 class="card-title">Giai đoạn huấn luyên thuật toán</h5>
+            <p class="card-text">
+            <ul style="padding: 0 20px;">
+              <li>
+                <span class="text-title">Thu thập dữ liệu:</span>
+                <span>Thu thập một tập dữ liệu mẫu chứa các email đã được gán nhãn là "spam" và "không phải
+                  spam".</span>
+              </li>
+              <li>
+                <span class="text-title">Tiền xử lý:</span>
+                <span>Là quá trình chuẩn hóa và làm sạch dữ liệu. Các bước tiền xử lý có thể bao gồm loại bỏ ký tự đặc
+                  biệt, chuyển đổi văn bản về chữ thường, xóa các từ không hữu ích (stop words) và thực hiện các phép
+                  tách từ (tokenization) để chia dữ liệu thành các từ riêng lẻ.</span>
+              </li>
+              <li>
+                <span class="text-title">Trích xuất đặc trưng:</span>
+                <span>Sau khi tiền xử lý dữ liệu, cần trích xuất các đặc trưng từ email. Đặc trưng có thể là số lượng từ
+                  xuất hiện trong email, tỷ lệ số từ viết hoa, sự xuất hiện của các từ khóa đặc biệt, v.v. Đây là quá
+                  trình chuyển đổi các email thành một biểu diễn số học mà thuật toán học máy có thể hiểu được.</span>
+              </li>
+              <li>
+                <span class="text-title">Xây dựng mô hình học máy:</span>
+                <span>Huấn luyện mô hình bằng hai thuật toán học máy Naive Bayes, Support Vector Machines (SVM) trên tập
+                  dữ liệu đã được tiền xử lý và đặc trưng đã được trích xuất</span>
+              </li>
+              <li>
+                <span class="text-title">Đánh giá mô hình:</span>
+                <span>Chia tập dữ liệu thành tập huấn luyện và tập kiểm tra. Sử dụng tập huấn luyện để huấn luyện mô
+                  hình và sử dụng tập kiểm tra để đánh giá hiệu suất của mô hình. Sử dụng các phép đo như độ chính xác
+                  (accuracy), độ phủ (recall), độ chính xác (precision) và F1-score để đánh giá mô hình.</span>
+              </li>
+              <li>
+                <span class="text-title">Tối ưu mô hình:</span>
+                <span>Dựa trên kết quả đánh giá, tối ưu mô hình bằng cách thay đổi các siêu tham số, cấu trúc mô hình,
+                  hoặc phương pháp rút trích đặc trưng để cải thiện hiệu suất. Quá trình này có thể yêu cầu lặp lại
+                  nhiều lần để đạt được một mô hình tốt nhất.</span>
+              </li>
+              <li>
+                <span class="text-title">Đánh giá và triển khai mô hình:</span>
+                <span>Đánh giá mô hình cuối cùng trên tập kiểm tra độc lập để đảm bảo rằng nó hoạt động tốt trên dữ liệu
+                  mới. Sau đó, triển khai mô hình vào một hệ thống thực tế để phân loại thư rác trong thời gian
+                  thực.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col d-flex flex-column align-items-center justify-content-center">
+            <img class="card-img-bottom" src="/static/images/mo-hinh-huan-luyen.png" alt="Practice algorithm">
+            <p class="card-text" style="margin: 10px auto;"><small class="text-muted">Mô hình huấn luyện hai thuật toán
+                Naïve
+                Bayes và SVM</small></p>
+          </div>
+        </div>
+
+        <h5 class="card-title">Giai đoạn xác định spam</h5>
+        <p class="card-text">
+        <ul style="padding: 0 20px;">
+          <li>
+            <span class="text-title">Đầu vào:</span>
+            <span>Biểu diễn nội dung của một thư (dưới dạng một vec tơ).</span>
+          </li>
+          <li>
+            <span class="text-title">Xử lý thư:</span>
+            <span>Thư được đưa qua các bước xử lý nhỏ hơn như cắt từ, loại bỏ dấu câu, các ký tự đặc biệt, ký tự xuống
+              dòng, tệp đính kèm và gán nhãn từ.</span>
+          </li>
+          <li>
+            <span class="text-title">Véc-tơ hóa dữ liệu:</span>
+            <span>Thư được cấu thành từ ngôn ngữ tự nhiên, một dạng ngôn ngữ phi cấu trúc, để máy có thể hiểu và học
+              được cần chuyển sang dạng véc-tơ, mỗi bức thư sẽ tương ứng là một véc-tơ. Véc-tơ được xây dựa trên trọng
+              số là tần suất xuât hiện của các từ trong tin tức.</span>
+          </li>
+          <li>
+            <span class="text-title">Mô hình huấn luyện:</span>
+            <span>Thư được xử lý đưa qua mô hình phân lớp được tạo ra từ giai đoạn huấn luyện ở trên để tiến hành phân
+              loại thư điện tử.</span>
+          </li>
+          <li>
+            <span class="text-title">Đầu ra:</span>
+            <span>Thư rác (“spam email”) hoặc thư bình thường (“ham email”).</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Thực nghiệm</h5>
+      </div>
+
+      <div class="card-body row">
+        <div class="col d-flex flex-column align-items-center justify-content-center">
+          <img class="card-img-bottom" src="/static/images/Mo hinh thuc nghiem2.png" alt="Practice algorithm">
+          <p class="card-text" style="margin: 10px auto;"><small class="text-muted">Mô hình hệ thống phát hiện và lọc
+              thư rác</small></p>
+        </div>
+
+        <div class="col">
+          <div class="mt-3">
+            <h5 class="card-title mt-3">a. Máy chủ DNS</h5>
+            <p class="card-text">
+            <ul style="padding: 0 20px;">
+              <li>
+                <span>Máy chủ DNS (Centos 8.0) để phân giải tên miền cho các máy chủ thư điện tử.</span>
+              </li>
+              <li>
+                <span>Tạo ra bản ghi MX cho thư điện tử:</span>
+                <ol>
+                  <li>MX mail.kma.com</li>
+                  <li>MX mail.student.com</li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-3">
+            <h5 class="card-title">b. Hệ thống thư điện tử KMA - mail.kma.com</h5>
+            <p class="card-text">
+            <ul style="padding: 0 20px;">
+              <li>
+                <span>Hệ điều hành Ubuntu 22.04.</span>
+              </li>
+              <li>
+                <span>Mail server (RoundCube Web Mail, Postfix, Dovecot) với domain là kma.com.</span>
+              </li>
+              <li>
+                <span>Cài đặt ứng dụng 1: Bộ lọc thư điện tử sử dụng máy học để lọc nội dung thư sử dụng hai thuật toán
+                  Naive Bayes và Support Vector Machine.</span>
+              </li>
+              <li>
+                <span>Cài đặt ứng dụng 2: Web quản trị để theo dõi quá trình xử lý thư rác, đánh giá độ chính xác dự đoán
+                  dữ liệu và thiết lập dựa trên hai thuật toán máy học.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-3">
+            <h5 class="card-title mt-2">c. Hệ thống thư điện tử sinh viên - mail.student.com</h5>
+            <p class="card-text">
+            <ul style="padding: 0 20px;">
+              <li>
+                <span>Hệ điều hành Window Server 2012.</span>
+              </li>
+              <li>
+                <span>Cài đặt ứng dụng Mdaemon là máy chủ thư sử dụng domain là student.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-3">
+            <h5 class="card-title">d. Máy tính gửi các spam email</h5>
+            <p class="card-text">
+            <ul style="padding: 0 20px;">
+              <li>
+                <span>Hệ điều hành Kali Linux 2023.</span>
+              </li>
+              <li>
+                <span>Sử dụng lệnh Sendemail để gửi spam email</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-3">
+            <h5 class="card-title">e. Người dùng trong hệ thống </h5>
+            <p class="card-text">
+            <ul style="padding: 0 20px;">
+              <li>
+                <span>Sử dụng web mail để gửi và nhận thư.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

@@ -1,65 +1,92 @@
-{% extends "layout.html" %} {%block body %}
+{% extends "index.html" %} {%block body %}
 <!-- Project name -->
-<div class="my-4 pb-1" style="border-bottom: 1px solid gray">
-  <h5 class="font-weight-bold text-uppercase">
-    Ứng dụng thuật toán học máy trong phát hiện thư rác
-  </h5>
+<div class="row mb-4">
+  <div class="col-md-12">
+    <div class="overview-wrap">
+      <h2 class="title-1">Ứng dụng thuật toán học máy trong phát hiện thư rác</h2>
+    </div>
+  </div>
 </div>
 
 <!-- Result of detection -->
 <!-- <h6 class="mb-3">Bảng phân loại Email</h6> -->
-<div class="text-nowrap table-light table-rounded">
-  <table class="table table-hover">
-    <thead>
-      <tr class="table-primary">
-        <th>ID</th>
-        <th>Date</th>
-        <th>From</th>
-        <th>To</th>
-        <th>Subject</th>
-        <!-- <th>Status</th> -->
-        <th>Model</th>
-        <th>Spam(%)</th>
-        <th>Non spam(%)</th>
-        <th>Predict</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for dt in emails %}
-      <tr>
-        <td>{{ dt.id }}</td>
-        <td>{{ dt.time }}</td>
-        <td>{{ dt.from }}</td>
-        <td>{{ dt.to }}</td>
-        <td>{{ dt.subject }}</td>
-        <!-- <td>{{ dt.sent }}</td> -->
-        <td>{{ dt.model }}</td>
-        <td>{{ dt.spam_score }}</td>
-        <td>{{ dt.non_spam_score }}</td>
-        {% if dt.predict == 'Spam' %}
-        <td
-          style="
-            background-color: rgb(206, 40, 40);
-            color: white;
-            text-align: center;
-          "
-        >
-          {{ dt.predict }}
-        </td>
-        {% else %}
-        <td
-          style="
-            background-color: rgb(31, 194, 31);
-            color: white;
-            text-align: center;
-          "
-        >
-          {{ dt.predict }}
-        </td>
-        {% endif %}
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<div class="card rounded shadow border-0">
+  <div class="card-body px-5 py-5 bg-white rounded">
+    <div class="table-responsive">
+      <table id="emailTable" style="width:100%" class="table table-striped table-bordered">
+        <tr class="table-primary">
+          <th>ID</th>
+          <th>Time</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Subject</th>
+          <th>Status</th>
+          <th>Model</th>
+          <th>Spam(%)</th>
+          <th>Non spam(%)</th>
+          <th class="text-center">Predict</th>
+        </tr>
+        </thead>
+
+        <tbody>
+          {% for dt in emails %}
+          <tr>
+            <td>{{ dt.id }}</td>
+            <td>{{ dt.time }}</td>
+            <td>{{ dt.from }}</td>
+            <td>{{ dt.to }}</td>
+            <td>{{ dt.subject }}</td>
+            <td>{{ dt.sent }}</td>
+            <td>{{ dt.model }}</td>
+            <td>{{ dt.spam_score }}</td>
+            <td>{{ dt.ham_score }}</td>
+            {% if dt.predict == 1 %}
+            <td class="column-flag">
+              <div class="d-flex align-items-center" style="gap: 8px">
+                <i class="fas fa-flag" style="color: #fa4251;"></i>
+                <span>Spam</span>
+              </div>
+            </td>
+            {% else %}
+            <td class="column-flag">
+              <div class="d-flex align-items-center" style="gap: 8px">
+                <i class="fas fa-flag" style="color: #00b5e9;"></i>
+                <span>Ham</span>
+              </div>
+            </td>
+            {% endif %}
+            <!-- {% if dt.predict == 'Spam' %}
+            <td style="background-color: rgb(206, 40, 40); color: white; text-align: center">{{ dt.predict }}</td>
+            {% else %}
+            <td style="background-color: rgb(31, 194, 31); color: white; text-align: center">{{ dt.predict }}</td>
+            {% endif %} -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="pagination">
+      {{ pagination.links }}
+    </div>
+  </div>
+
 </div>
-{{ pagination.links }} {% endblock %}
+
+<div class="card rounded shadow" style="padding: 20px; font-size: 20px;">
+  <div class="d-flex justify-content-center" style="gap: 80px">
+    <span style="color: green">
+      Tổng số thư: {{ total_emails }}
+    </span>
+
+    <span style="color: blue">
+      Thư thường: {{ total_ham }}
+    </span>
+
+    <span style="color: red">
+      Thư rác: {{ total_spam }}
+    </span>
+  </div>
+</div>
+{% endblock %}

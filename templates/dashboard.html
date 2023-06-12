@@ -1,0 +1,240 @@
+{% extends "index.html" %} {%block body %}
+<!-- Body -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="overview-wrap">
+      <h2 class="title-1">Tổng quan</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row m-t-25">
+  <div class="col-sm-6 col-lg-3">
+    <a href="/apply" style="width: 100%;">
+      <div class="overview-item overview-item--c4">
+        <div class="overview__inner">
+          <div class="overview-box clearfix">
+            <div class="icon">
+              <i class="zmdi zmdi-chart"></i>
+            </div>
+            <div class="text">
+              <span class="home-card-text">Hộp thư đến</span>
+              <h2>{{ total_emails }}</h2>
+            </div>
+          </div>
+          <div class="overview-chart">
+            <canvas id="widgetChart4"></canvas>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-sm-6 col-lg-3">
+    <div class="overview-item overview-item--c2">
+      <div class="overview__inner">
+        <div class="overview-box clearfix">
+          <div class="icon">
+            <i class="zmdi zmdi-check-circle"></i>
+          </div>
+
+          <div class="text">
+            <span class="home-card-text">Thư thường</span>
+            <h2>{{ total_ham }}</h2>
+          </div>
+        </div>
+
+        <div class="overview-chart">
+          <canvas id="widgetChart2"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-6 col-lg-3">
+    <div class="overview-item overview-item--c3">
+      <div class="overview__inner">
+        <div class="overview-box clearfix">
+          <div class="icon">
+            <i class="zmdi zmdi-close-circle"></i>
+          </div>
+
+          <div class="text">
+            <span class="home-card-text">Thư rác</span>
+            <h2>{{ total_spam }}</h2>
+          </div>
+        </div>
+
+        <div class="overview-chart">
+          <canvas id="widgetChart3"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-lg-3">
+    <div class="overview-item overview-item--c1" id="spam-statistic" data-spam="{{ spam_percent }}">
+      <div class="overview__inner">
+        <div class="overview-box clearfix">
+          <div class="icon">
+            <i class="zmdi zmdi-account-box-mail"></i>
+          </div>
+
+          <div class="text">
+            <span class="home-card-text">Thư rác chiếm</span>
+            <h2>{{ spam_percent }}%</h2>
+          </div>
+        </div>
+
+        <div class="overview-chart">
+          <canvas id="widgetChart1"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="au-card chart-percent-card">
+      <div class="au-card-inner">
+        <h3 class="title-2 tm-b-5">Độ phổ biến của các phương pháp học máy</h3>
+        <div class="row no-gutters">
+          <div class="col-xl-6">
+            <div class="chart-note-wrap">
+              <div class="chart-note mr-0 d-block">
+                <span class="dot dot--blue"></span>
+                <span>Học có giám sát</span>
+              </div>
+
+              <div class="chart-note mr-0 d-block">
+                <span class="dot dot--red"></span>
+                <span>Học không giám sát</span>
+              </div>
+
+              <div class="chart-note mr-0 d-block">
+                <span class="dot dot--green"></span>
+                <span>Học tăng cường</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="percent-chart">
+              <canvas id="percent-chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="au-card recent-report">
+      <div class="au-card-inner">
+        <h3 class="title-2">Kết quả huấn luyện thuật toán Naive Bayes và SVM</h3>
+        
+        <div class="chart-info">
+          <div class="chart-info__left">
+            <div class="chart-note">
+              <span class="dot dot--blue"></span>
+              <span>Naive Bayes</span>
+            </div>
+
+            <div class="chart-note mr-0 mt-3">
+              <span class="dot dot--red"></span>
+              <span>Support Vector Machine (SVM)</span>
+            </div>
+          </div>
+        </div>
+        <div class="recent-report__chart">
+          <canvas id="recent-rep-chart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-5">
+    <h2 class="title-1 m-b-25">Các quốc gia nhận thư rác nhiều nhất</h2>
+    <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+      <div class="au-card-inner">
+        <div class="table-responsive">
+          <table class="table table-top-countries">
+            <tbody>
+              <tr>
+                <td class="text-national">Russia</td>
+                <td class="text-right">23.52%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Germany</td>
+                <td class="text-right">11.01%</td>
+              </tr>
+              <tr>
+                <td class="text-national">United States</td>
+                <td class="text-right">10.85%</td>
+              </tr>
+              <tr>
+                <td class="text-national">France</td>
+                <td class="text-right">6.69%</td>
+              </tr>
+              <tr>
+                <td class="text-national">China</td>
+                <td class="text-right">6.33%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Netherlands</td>
+                <td class="text-right">3.89%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Brazil</td>
+                <td class="text-right">3.89%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Spain</td>
+                <td class="text-right">2.52%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Japan</td>
+                <td class="text-right">2.3%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Poland</td>
+                <td class="text-right">1.84%%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Turkey</td>
+                <td class="text-right">1.73%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Ukraine</td>
+                <td class="text-right">1.57%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Vietnam</td>
+                <td class="text-right">1.47%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Italy</td>
+                <td class="text-right">1.07%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Czech Republic</td>
+                <td class="text-right">1.03%</td>
+              </tr>
+              <tr>
+                <td class="text-national">Croatia</td>
+                <td class="text-right">1.02%</td>
+              </tr>
+              <tr>
+                <td class="text-national">India</td>
+                <td class="text-right">0.96%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

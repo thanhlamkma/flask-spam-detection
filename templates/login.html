@@ -6,20 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phát hiện thư rác</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
 
+    <!-- Bootstrap CSS-->
+    <link href="/static/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="/static/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <style>
         html,
         body {
             height: 100%;
-            background-color: #f0f0f0;
+            background-color: #e5e5e5;
         }
 
         @media (min-width: 1500px) {
@@ -57,11 +60,11 @@
 
 <body>
     <!-- Header -->
-    <nav class="navbar navbar-light px-3 py-2" style="background-color: #f4edd3">
+    <nav class="navbar navbar-light px-3 py-2" style="background-color: #f5f5f5">
         <a class="navbar-brand" href="/">
             <div class="d-flex align-items-center">
                 <img src="/static/images/logo.webp" width="68" height="68" alt="" />
-                <span class="ml-3 font-weight-bold text-uppercase" style="font-size: 28px; color: red">
+                <span class="ml-3 text-uppercase" style="font-size: 28px; font-weight: 600; color: #007bff">
                     Học viện kĩ thuật mật mã
                 </span>
             </div>
@@ -71,7 +74,7 @@
     <div class="container d-flex align-items-center" style="height: 80%;">
         <div
             style="background-color: #fff; border: none; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1); box-sizing: border-box; margin: 0 auto; padding: 20px 20px 28px; width: 500px;">
-            <p class="mx-auto" style="font-size: 24px; font-weight: 500;">Đăng nhập</p>
+            <p class="text-center text-uppercase" style="font-size: 24px; font-weight: 600;">Đăng nhập</p>
             <form method="post">
                 <div class="form-group login-form-input">
                     <label for="exampleInputEmail1">Tên đăng nhập</label>
@@ -96,5 +99,12 @@
         </div>
     </div>
 
+    <!-- Jquery JS-->
+    <script src="/static/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="/static/vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="/static/vendor/counter-up/jquery.counterup.min.js">
+    </script>
 </body>

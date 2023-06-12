@@ -1,27 +1,62 @@
-{% extends "layout.html" %} {%block body %}
+{% extends "index.html" %} {%block body %}
 <!-- Project name -->
-<div class="my-4 pb-1" style="border-bottom: 1px solid gray">
-  <h5 class="font-weight-bold text-uppercase">Cài đặt</h5>
-</div>
 
-<div class="card my-4">
-  <div class="card-body">
-    <h5 class="card-title">Thuật toán sử dụng để lọc thư</h5>
-
-    <form class="mt-4" method="post">
-      <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">
-          Lựa chọn thuật toán
-        </label>
-        <div class="col-sm-4">
-          <select class="form-control" name="algorithm_type">
-            <option value="nb">Naive Bayes</option>
-            <option value="svm">SVM (Support Machine Vector)</option>
-          </select>
-        </div>
-        <button type="submit" class="col-sm-1 btn btn-primary">Submit</button>
+<div class="setting-page">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="overview-wrap">
+        <h2 class="title-1">Cài đặt</h2>
       </div>
-    </form>
+    </div>
+  </div>
+  
+  <style>
+    .error-message {
+      color: #fa4251;
+    }
+  
+    .info-message {
+      color: #00b5e9;
+    }
+  </style>
+  
+  <div class="card my-4">
+    <div class="card-body">
+      <h5 class="card-title">Thuật toán sử dụng để phát hiện thư rác</h5>
+      {% if method == 'get'%}
+      {% if success == 0 %}
+      <p class="error-message">Bị lỗi khi lấy thông tin cài đặt!</p>
+      {% else %}
+      <p class="info-message">Thuật toán máy học đang sử dụng hiện tại là: {{ message }}</p>
+      {% endif %}
+      {% endif %}
+  
+      {% if method=='post' %}
+      {%if success_val ==1 %}
+      <p class="error-message">{{ message }}</p>
+      {% else %}
+      <p class="info-message">{{message}}</p>
+      {% endif%}
+      {% endif %}
+  
+  
+  
+      <form class="mt-4" action="{{ url_for('setting') }}" method="post">
+        <div class="form-group row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">
+            Lựa chọn thuật toán
+          </label>
+          <div class="col-sm-4">
+            <select class="form-control" name="algorithm_type">
+              <option value="na" {% if message=='Navie Bayes' %}selected{% endif %}>Naive Bayes</option>
+              <option value="svm" {% if message=='Support Vector Machine' %}selected{% endif %}>Support Vector Machine
+              </option>
+            </select>
+          </div>
+          <button type="submit" class="col-sm-1 btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 {% endblock %}

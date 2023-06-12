@@ -1,4 +1,5 @@
 flask
+flask[async]
 flask-paginate
 aioredis
-mongoengine
+redis

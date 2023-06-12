@@ -1,115 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phát hiện thư rác</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
 
-    <style>
-      body {
-        background-color: #f0f0f0;
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/static/icons/favicon.ico" type="image/x-icon">
+
+  <title>Phát hiện thư rác</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #f0f0f0;
+    }
+
+    @media (min-width: 1500px) {
+      .container {
+        max-width: 1500px !important;
       }
-      @media (min-width: 1500px) {
-        .container {
-          max-width: 1500px !important;
-        }
-      }
+    }
 
-      /* Bootstrap 4 */
-      .navbar-menu {
-        padding: 2px !important;
-      }
+    .table-apply {
+      width: 100%;
+    }
 
-      .navbar-menu .nav-link {
-        font-size: 18px;
-      }
+    /* Bootstrap 4 */
+    .navbar-menu {
+      padding: 2px !important;
+    }
 
-      .navbar-menu .nav-item:hover {
-        opacity: 0.8;
-      }
+    .navbar-menu .nav-link {
+      font-size: 18px;
+    }
 
-      .card-header {
-        font-weight: 500;
-      }
+    .navbar-menu .nav-item:hover {
+      opacity: 0.8;
+    }
 
-      /* Custom */
-      .text-title {
-        font-weight: 500;
-        font-size: 16px;
-      }
-    </style>
-  </head>
+    .card-header {
+      font-weight: 500;
+    }
 
-  <body>
-    <!-- Header -->
-    <nav
-      class="navbar navbar-light px-3 py-2"
-      style="background-color: #f4edd3"
-    >
-      <a class="navbar-brand" href="/">
-        <div class="d-flex align-items-center">
-          <img src="/static/images/logo.webp" width="68" height="68" alt="" />
-          <span
-            class="ml-3 font-weight-bold text-uppercase"
-            style="font-size: 28px; color: red"
-          >
-            Học viện kĩ thuật mật mã
-          </span>
-        </div>
-      </a>
-    </nav>
+    /* Custom */
+    .text-title {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  </style>
+</head>
 
-    <!-- Navbar menu -->
-    <nav
-      class="navbar-menu navbar sticky-top navbar-expand-lg navbar-dark"
-      style="background-color: #0077b6"
-    >
-      <div class="container">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/"
-                >Trang chủ <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/chart">Biểu đồ</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/apply">Ứng dụng</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/setting">Cài đặt</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/login">Đăng xuất</a>
-            </li>
-          </ul>
-        </div>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-light px-3 py-2" style="background-color: #f4edd3">
+    <a class="navbar-brand" href="/">
+      <div class="d-flex align-items-center">
+        <img src="/static/images/logo.webp" width="68" height="68" alt="" />
+        <span class="ml-3 font-weight-bold text-uppercase" style="font-size: 28px; color: red">
+          Học viện kĩ thuật mật mã
+        </span>
       </div>
-    </nav>
+    </a>
+  </nav>
 
-    <!-- Body -->
-    <div class="container">{% block body %}{% endblock %}</div>
+  <!-- Navbar menu -->
+  <nav class="navbar-menu navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #0077b6">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Trang chủ <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/chart">Biểu đồ</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/apply">Thông tin</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/setting">Cài đặt</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout">Đăng xuất</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Footer -->
-    <div>{% block footer %}{% endblock %}</div>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+  <!-- Body -->
+  {% block body %}{% endblock %}
+
+  <!-- Footer -->
+  <div>{% block footer %}{% endblock %}</div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+
 </html>
